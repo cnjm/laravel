@@ -108,6 +108,7 @@ export default {
             this.addFun();
           }
         }
+        console.log(list)
       },
       immediate: true,
       deep: true
@@ -209,8 +210,8 @@ export default {
       let str = "";
       this.list.map((value, index) => {
         if (value.field != "") {
-          str = `
-          $table->${value.type}('${value.field}','${value.default}')->comment("${value.notes}")->default(${value.required});
+          str += `
+          $table->${value.type}('${value.field}','${value.default}')->comment("${value.notes}")->default(${value.default});
           `;
         }
       });
